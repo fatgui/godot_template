@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
-[ext_resource path="res://SplashScene/splashScreen.gd" type="Script" id=1]
+[ext_resource path="res://IntroScene/intro.gd" type="Script" id=1]
 [ext_resource path="res://SplashScene/logo.png" type="Texture" id=2]
 [ext_resource path="res://SplashScene/icon.png" type="Texture" id=3]
+[ext_resource path="res://IntroScene/button1.png" type="Texture" id=4]
 
 [node name="splashScreen" type="Node"]
 
@@ -10,10 +11,9 @@ script/script = ExtResource( 1 )
 __meta__ = {
 "__editor_plugin_screen__": "Script"
 }
-fadeSpeed = 0.7
+fadeSpeed = 0.5
 initTime = 1
-showingTime = 2
-logo_scale = Vector2( 0.3, 0.3 )
+showingTime = 4
 
 [node name="Label" type="Label" parent="."]
 
@@ -42,5 +42,24 @@ texture = ExtResource( 2 )
 transform/pos = Vector2( 380.116, 360 )
 transform/scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 3 )
+
+[node name="TextureButton" type="TextureButton" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 1091.0
+margin/top = 636.0
+margin/right = 1227.0
+margin/bottom = 685.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 4 )
+params/resize_mode = 1
+params/stretch_mode = 0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
 
 

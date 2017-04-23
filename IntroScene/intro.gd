@@ -12,7 +12,6 @@ var alpha = 0;
 export var fadeSpeed = 0.5;
 export var initTime = 1 #in seconds
 export var showingTime = 4
-export var logo_scale = Vector2(1.0,1.0)
 var timeWaited = 0
 
 var logo = null
@@ -21,10 +20,8 @@ var label = null
 
 func _ready():
 	logo = get_node("myLogo")
-	logo.set_scale(logo_scale)
 	logo.set_modulate(Color(255,255,255,alpha))
 	logo2 = get_node("myLogo1")
-	logo2.set_scale(logo_scale)
 	logo2.set_modulate(Color(255,255,255,alpha))
 	label = get_node("Label")
 	label.set_opacity(alpha)
@@ -48,26 +45,8 @@ func _process(delta):
 		
 		if alpha >= 1:
 			alpha = 1
-			state = STATE_SHOWING
-			
-	elif state == STATE_SHOWING:
-		timeWaited += delta
-		if timeWaited >= showingTime:
-			state = STATE_FADEOUT
-			
-	elif state == STATE_FADEOUT:
-		alpha -= fadeSpeed * delta
-		logo.set_modulate(Color(1,1,1,alpha))
-		logo2.set_modulate(Color(1,1,1,alpha))
-		label.set_opacity(alpha)
-		if alpha <= 0:
-			state = STATE_FINISHED
-			
-	else:
-		set_process(false)
-		#Go to main menu scene
-		get_node("/root/sceneManager").goto_scene("res://MainMenuScene/main_menu.tscn")
+			state = STATE_SHOWING		
+	
 
-		
-	pass
-
+func _on_TextureButton_pressed():
+	get_node("/root/sceneManager").goto_scene("res://MainMenuScene/main_menu.tscn")

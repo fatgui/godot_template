@@ -2,7 +2,7 @@
 
 [ext_resource path="res://MainMenuScene/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://MainMenuScene/button1.png" type="Texture" id=2]
-[ext_resource path="res://MainMenuScene/font.fnt" type="Font" id=3]
+[ext_resource path="res://MainMenuScene/font.fnt" type="BitmapFont" id=3]
 [ext_resource path="res://MainMenuScene/button2.png" type="Texture" id=4]
 [ext_resource path="res://MainMenuScene/button3.png" type="Texture" id=5]
 [ext_resource path="res://MainMenuScene/button4.png" type="Texture" id=6]
@@ -16,31 +16,39 @@
 [node name="Node" type="Node"]
 
 script/script = ExtResource( 1 )
-__meta__ = { "__editor_plugin_screen__":"Script" }
+__meta__ = {
+"__editor_plugin_screen__": "Script"
+}
 
 [node name="PlayButton" type="TextureButton" parent="."]
 
-margin/left = 160.0
-margin/top = 150.0
-margin/right = 454.0
-margin/bottom = 199.0
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
+margin/left = 160.0
+margin/top = 150.0
+margin/right = 454.0
+margin/bottom = 199.0
 toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
 textures/normal = ExtResource( 2 )
+params/resize_mode = 0
 params/scale = Vector2( 6, 1 )
+params/stretch_mode = 0
 
 [node name="Label" type="Label" parent="PlayButton"]
 
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
 margin/left = 76.0
 margin/top = 6.0
 margin/right = 228.0
 margin/bottom = 42.0
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
 custom_fonts/font = ExtResource( 3 )
 text = "PLAY!"
 percent_visible = 1.0
@@ -49,27 +57,32 @@ max_lines_visible = -1
 
 [node name="OptionsButton" type="TextureButton" parent="."]
 
-margin/left = 160.0
-margin/top = 280.0
-margin/right = 454.0
-margin/bottom = 329.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
+margin/left = 160.0
+margin/top = 280.0
+margin/right = 454.0
+margin/bottom = 329.0
 toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
 textures/normal = ExtResource( 4 )
+params/resize_mode = 0
 params/scale = Vector2( 6, 1 )
+params/stretch_mode = 0
 
 [node name="Label1" type="Label" parent="OptionsButton"]
 
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
 margin/left = 48.0
 margin/top = 6.0
 margin/right = 262.0
 margin/bottom = 42.0
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
 custom_fonts/font = ExtResource( 3 )
 text = "Options"
 percent_visible = 1.0
@@ -78,27 +91,32 @@ max_lines_visible = -1
 
 [node name="CreditsButton" type="TextureButton" parent="."]
 
-margin/left = 160.0
-margin/top = 420.0
-margin/right = 454.0
-margin/bottom = 469.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
+margin/left = 160.0
+margin/top = 420.0
+margin/right = 454.0
+margin/bottom = 469.0
 toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
 textures/normal = ExtResource( 5 )
+params/resize_mode = 0
 params/scale = Vector2( 6, 1 )
+params/stretch_mode = 0
 
 [node name="Label2" type="Label" parent="CreditsButton"]
 
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
 margin/left = 42.0
 margin/top = 7.0
 margin/right = 256.0
 margin/bottom = 43.0
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
 custom_fonts/font = ExtResource( 3 )
 text = "Credits"
 percent_visible = 1.0
@@ -107,27 +125,32 @@ max_lines_visible = -1
 
 [node name="ExitButton" type="TextureButton" parent="."]
 
-margin/left = 160.0
-margin/top = 550.0
-margin/right = 454.0
-margin/bottom = 599.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
+margin/left = 160.0
+margin/top = 550.0
+margin/right = 454.0
+margin/bottom = 599.0
 toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
 textures/normal = ExtResource( 6 )
+params/resize_mode = 0
 params/scale = Vector2( 6, 1 )
+params/stretch_mode = 0
 
 [node name="Label3" type="Label" parent="ExitButton"]
 
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
 margin/left = 94.0
 margin/top = 5.0
 margin/right = 308.0
 margin/bottom = 41.0
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
 custom_fonts/font = ExtResource( 3 )
 text = "Exit"
 percent_visible = 1.0
@@ -136,13 +159,14 @@ max_lines_visible = -1
 
 [node name="Label" type="Label" parent="."]
 
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
 margin/left = 164.0
 margin/top = 35.0
 margin/right = 458.0
 margin/bottom = 94.0
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
 custom_fonts/font = ExtResource( 3 )
 text = "Main Menu"
 percent_visible = 1.0
@@ -152,53 +176,60 @@ max_lines_visible = -1
 [node name="ExitPopup" type="Popup" parent="."]
 
 process/pause_mode = 2
+editor/display_folded = true
 visibility/visible = false
-margin/left = 154.0
-margin/top = 278.0
-margin/right = 454.0
-margin/bottom = 478.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 theme/theme = SubResource( 1 )
+margin/left = 154.0
+margin/top = 278.0
+margin/right = 454.0
+margin/bottom = 478.0
 popup/exclusive = true
-__meta__ = { "_editor_collapsed":true }
 
 [node name="Panel" type="Panel" parent="ExitPopup"]
 
-margin/right = 300.0
-margin/bottom = 200.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
 theme/theme = SubResource( 2 )
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 300.0
+margin/bottom = 200.0
 
 [node name="OKButton" type="TextureButton" parent="ExitPopup/Panel"]
 
-margin/left = 28.0
-margin/top = 130.0
-margin/right = 78.0
-margin/bottom = 179.0
 rect/scale = Vector2( 2, 1 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 2
+margin/left = 28.0
+margin/top = 130.0
+margin/right = 78.0
+margin/bottom = 179.0
 toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
 textures/normal = ExtResource( 2 )
+params/resize_mode = 0
+params/stretch_mode = 0
 
 [node name="Label" type="Label" parent="ExitPopup/Panel/OKButton"]
 
-margin/left = 5.0
-margin/top = 9.0
-margin/right = 107.0
-margin/bottom = 45.0
 rect/scale = Vector2( 0.4, 0.8 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 5.0
+margin/top = 9.0
+margin/right = 107.0
+margin/bottom = 45.0
 custom_fonts/font = ExtResource( 3 )
 text = "Yes"
 percent_visible = 1.0
@@ -207,28 +238,33 @@ max_lines_visible = -1
 
 [node name="CancelButton1" type="TextureButton" parent="ExitPopup/Panel"]
 
-margin/left = 171.0
-margin/top = 130.0
-margin/right = 221.0
-margin/bottom = 179.0
 rect/scale = Vector2( 2, 1 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 2
+margin/left = 171.0
+margin/top = 130.0
+margin/right = 221.0
+margin/bottom = 179.0
 toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
 textures/normal = ExtResource( 6 )
+params/resize_mode = 0
+params/stretch_mode = 0
 
 [node name="Label" type="Label" parent="ExitPopup/Panel/CancelButton1"]
 
-margin/left = 16.0
-margin/top = 9.0
-margin/right = 86.0
-margin/bottom = 45.0
 rect/scale = Vector2( 0.4, 0.8 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 16.0
+margin/top = 9.0
+margin/right = 86.0
+margin/bottom = 45.0
 custom_fonts/font = ExtResource( 3 )
 text = "No"
 percent_visible = 1.0
@@ -237,15 +273,16 @@ max_lines_visible = -1
 
 [node name="Label" type="Label" parent="ExitPopup/Panel"]
 
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
 margin/left = 10.0
 margin/top = 9.0
 margin/right = 289.0
 margin/bottom = 126.0
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
 custom_fonts/font = ExtResource( 3 )
-text = "Do you want to Quit\?"
+text = "Do you want to Quit?"
 align = 1
 autowrap = true
 percent_visible = 1.0
