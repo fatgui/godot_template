@@ -1,5 +1,5 @@
 
-extends Node
+extends Node2D
 
 const STATE_INIT = 0
 const STATE_FADEIN = 1
@@ -16,18 +16,11 @@ export var logo_scale = Vector2(1.0,1.0)
 var timeWaited = 0
 
 var logo = null
-var logo2 = null
-var label = null
 
 func _ready():
 	logo = get_node("myLogo")
 	logo.set_scale(logo_scale)
 	logo.set_modulate(Color(255,255,255,alpha))
-	logo2 = get_node("myLogo1")
-	logo2.set_scale(logo_scale)
-	logo2.set_modulate(Color(255,255,255,alpha))
-	label = get_node("Label")
-	label.set_opacity(alpha)
 	set_process(true)
 
 func getSplashScreenState():
@@ -43,9 +36,6 @@ func _process(delta):
 	elif state == STATE_FADEIN:
 		alpha += fadeSpeed * delta
 		logo.set_modulate(Color(1,1,1,alpha))
-		logo2.set_modulate(Color(1,1,1,alpha))
-		label.set_opacity(alpha)
-		
 		if alpha >= 1:
 			alpha = 1
 			state = STATE_SHOWING
@@ -58,8 +48,6 @@ func _process(delta):
 	elif state == STATE_FADEOUT:
 		alpha -= fadeSpeed * delta
 		logo.set_modulate(Color(1,1,1,alpha))
-		logo2.set_modulate(Color(1,1,1,alpha))
-		label.set_opacity(alpha)
 		if alpha <= 0:
 			state = STATE_FINISHED
 			
